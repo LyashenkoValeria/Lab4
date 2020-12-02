@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/ConstraintLayout"
+    android:layout_width="match_parent"
+    android:layout_height="210dp">
+
+        <TextView
+            android:id="@+id/type"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:background="#A675FB"
+            android:gravity="center"
+            android:text="@string/incollection"
+            android:textColor="#000000"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toTopOf="@+id/inc_author"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/inc_author"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:background="#A675FB"
+            android:textColor="#000000"
+            app:layout_constraintBottom_toTopOf="@+id/inc_title"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/type" />
+
+        <TextView
+            android:id="@+id/inc_title"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:background="#A675FB"
+            android:textColor="#000000"
+            app:layout_constraintBottom_toTopOf="@+id/inc_booktitle"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/inc_author" />
+
+        <TextView
+            android:id="@+id/inc_booktitle"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:background="#A675FB"
+            android:textColor="#000000"
+            app:layout_constraintBottom_toTopOf="@+id/inc_year"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/inc_title" />
+
+
+        <TextView
+            android:id="@+id/inc_year"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:background="#A675FB"
+            android:textColor="#000000"
+            app:layout_constraintBottom_toTopOf="@+id/space3"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/inc_booktitle" />
+
+        <Space
+            android:id="@+id/space3"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/inc_year" />
+</androidx.constraintlayout.widget.ConstraintLayout>

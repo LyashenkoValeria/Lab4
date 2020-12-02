@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/ConstraintLayout"
+    android:layout_width="match_parent"
+    android:layout_height="210dp">
+
+        <TextView
+            android:id="@+id/type"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:background="#8F9295"
+            android:gravity="center"
+            android:text="@string/unpublished"
+            android:textColor="#000000"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toTopOf="@+id/unp_author"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/unp_author"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:background="#8F9295"
+            android:textColor="#000000"
+            app:layout_constraintBottom_toTopOf="@+id/unp_title"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/type" />
+
+        <TextView
+            android:id="@+id/unp_title"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:background="#8F9295"
+            android:textColor="#000000"
+            app:layout_constraintBottom_toTopOf="@+id/unp_year"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/unp_author" />
+
+
+        <TextView
+            android:id="@+id/unp_year"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:background="#8F9295"
+            android:textColor="#000000"
+            app:layout_constraintBottom_toTopOf="@+id/unp_type1"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/unp_title" />
+
+        <TextView
+            android:id="@+id/unp_type1"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:background="#8F9295"
+            android:textColor="#000000"
+            app:layout_constraintBottom_toTopOf="@+id/space7"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/unp_year" />
+
+        <Space
+            android:id="@+id/space7"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/unp_type1" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

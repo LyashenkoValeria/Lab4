@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/ConstraintLayout"
+    android:layout_width="match_parent"
+    android:layout_height="210dp">
+
+        <TextView
+            android:id="@+id/type"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:background="#FD6A9C"
+            android:gravity="center"
+            android:text="@string/misc"
+            android:textColor="#000000"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toTopOf="@+id/misc_author"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/misc_author"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:background="#FD6A9C"
+            android:textColor="#000000"
+            app:layout_constraintBottom_toTopOf="@+id/misc_title"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/type" />
+
+        <TextView
+            android:id="@+id/misc_title"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:background="#FD6A9C"
+            android:textColor="#000000"
+            app:layout_constraintBottom_toTopOf="@+id/misc_howpublished"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/misc_author" />
+
+        <TextView
+            android:id="@+id/misc_howpublished"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:background="#FD6A9C"
+            android:textColor="#000000"
+            app:layout_constraintBottom_toTopOf="@+id/misc_year"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/misc_title" />
+
+
+        <TextView
+            android:id="@+id/misc_year"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:background="#FD6A9C"
+            android:textColor="#000000"
+            app:layout_constraintBottom_toTopOf="@+id/space5"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/misc_howpublished" />
+
+        <Space
+            android:id="@+id/space5"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/misc_year" />
+</androidx.constraintlayout.widget.ConstraintLayout>

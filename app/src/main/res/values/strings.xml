@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">Lab4</string>
+    <string name="article">Article</string>
+    <string name="book">Book</string>
+    <string name="incollection">Incollection</string>
+    <string name="inproceedings">Inproceedings</string>
+    <string name="misc">Misc</string>
+    <string name="techreport">Techreport</string>
+    <string name="unpublished">Unpublished</string>
+</resources>

@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/ConstraintLayout"
+    android:layout_width="match_parent"
+    android:layout_height="210dp">
+
+        <TextView
+            android:id="@+id/type"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:background="#03A9F4"
+            android:gravity="center"
+            android:text="@string/article"
+            android:textColor="#000000"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toTopOf="@+id/art_author"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/art_author"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:background="#03A9F4"
+            android:textColor="#000000"
+            app:layout_constraintBottom_toTopOf="@+id/art_title"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/type" />
+
+        <TextView
+            android:id="@+id/art_title"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:background="#03A9F4"
+            android:textColor="#000000"
+            app:layout_constraintBottom_toTopOf="@+id/art_journal"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/art_author" />
+
+        <TextView
+            android:id="@+id/art_journal"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:background="#03A9F4"
+            android:textColor="#000000"
+            app:layout_constraintBottom_toTopOf="@+id/art_year"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/art_title" />
+
+        <TextView
+            android:id="@+id/art_year"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:background="#03A9F4"
+            android:textColor="#000000"
+            app:layout_constraintBottom_toTopOf="@+id/space"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/art_journal" />
+
+        <Space
+            android:id="@+id/space"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/art_year" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
