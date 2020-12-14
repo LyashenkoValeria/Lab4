@@ -1,7 +1,6 @@
 package com.example.lab4;
 
 import android.content.Context;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -9,88 +8,66 @@ import android.view.ViewGroup;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
-
-import java.util.List;
-
+import name.ank.lab4.BibDatabase;
 import name.ank.lab4.BibEntry;
-import name.ank.lab4.Types;
-
 
 public class Adapter extends RecyclerView.Adapter<ViewHolder> {
-    private static final String TAG = "myLogs";
     LayoutInflater inflater;
-    List<BibEntry> entries;
-    ViewHolder.ViewHolderArt viewHolderArt;
-    ViewHolder.ViewHolderBook viewHolderBook;
-    ViewHolder.ViewHolderInc viewHolderInc;
-    ViewHolder.ViewHolderInp viewHolderInp;
-    ViewHolder.ViewHolderMisc viewHolderMisc;
-    ViewHolder.ViewHolderTech viewHolderTech;
-    ViewHolder.ViewHolderUnp viewHolderUnp;
+    BibDatabase database;
 
 
-    Adapter(Context context, List<BibEntry> entries) {
-        this.entries = entries;
+    Adapter(Context context, BibDatabase database) {
+        this.database = database;
         this.inflater = LayoutInflater.from(context);
     }
 
     @NonNull
     @Override
-    public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent , int viewType) {
+    public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         View view;
+        ViewHolder holder;
         switch (viewType) {
             case 2:
-                view = LayoutInflater.from(parent.getContext()).inflate(R.layout.book, parent, false);
-                viewHolderBook = new ViewHolder.ViewHolderBook(view);
-                return viewHolderBook;
+                view = inflater.inflate(R.layout.book, parent, false);
+                holder = new ViewHolder.ViewHolderBook(view);
+                return holder;
             case 3:
                 view = inflater.inflate(R.layout.incollection, parent, false);
-                viewHolderInc = new ViewHolder.ViewHolderInc(view);
-                return viewHolderInc;
+                holder = new ViewHolder.ViewHolderInc(view);
+                return holder;
             case 4:
                 view = inflater.inflate(R.layout.inproceedings, parent, false);
-                viewHolderInp = new ViewHolder.ViewHolderInp(view);
-                return viewHolderInp;
+                holder = new ViewHolder.ViewHolderInp(view);
+                return holder;
             case 5:
-                view = inflater.inflate(R.layout.mics , parent , false);
-                viewHolderMisc = new ViewHolder.ViewHolderMisc(view);
-                return viewHolderMisc;
+                view = inflater.inflate(R.layout.mics, parent, false);
+                holder = new ViewHolder.ViewHolderMisc(view);
+                return holder;
             case 6:
                 view = inflater.inflate(R.layout.techreport, parent, false);
-                viewHolderTech = new ViewHolder.ViewHolderTech(view);
-                return viewHolderTech;
+                holder = new ViewHolder.ViewHolderTech(view);
+                return holder;
             case 7:
                 view = inflater.inflate(R.layout.unpublished, parent, false);
-                viewHolderUnp = new ViewHolder.ViewHolderUnp(view);
-                return viewHolderUnp;
+                holder = new ViewHolder.ViewHolderUnp(view);
+                return holder;
             case 1:
             default:
                 view = inflater.inflate(R.layout.article, parent, false);
-                viewHolderArt = new ViewHolder.ViewHolderArt(view);
-                return viewHolderArt;
+                holder = new ViewHolder.ViewHolderArt(view);
+                return holder;
         }
     }
 
     @Override
-    public void onBindViewHolder(@NonNull ViewHolder holder , int position) {
-        Types currentType = entries.get(position).getType();
-        Log.d(TAG, String.valueOf(currentType));
-        switch (entries.get(position).getType()){
-            case BOOK: viewHolderBook.setKeys(entries, position); break;
-            case INCOLLECTION: viewHolderInc.setKeys(entries, position); break;
-            case INPROCEEDINGS: viewHolderInp.setKeys(entries, position); break;
-            case MISC: viewHolderMisc.setKeys(entries, position); break;
-            case TECHREPORT: viewHolderTech.setKeys(entries, position); break;
-            case UNPUBLISHED: viewHolderUnp.setKeys(entries, position); break;
-            case ARTICLE:
-            default: viewHolderArt.setKeys(entries, position); break;
-
-        }
+    public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
+        BibEntry curEntry = database.getEntry(position);
+        holder.setKeys(curEntry);
     }
 
     @Override
     public int getItemViewType(int position) {
-        switch (entries.get(position).getType()) {
+        switch (database.getEntry(position).getType()) {
             case BOOK: return 2;
             case INCOLLECTION: return 3;
             case INPROCEEDINGS: return 4;
@@ -105,7 +82,7 @@ public class Adapter extends RecyclerView.Adapter<ViewHolder> {
 
     @Override
     public int getItemCount() {
-        return entries.size();
+        return database.size();
     }
 }
 

@@ -6,8 +6,6 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
-import java.util.List;
-
 import name.ank.lab4.BibEntry;
 import name.ank.lab4.Keys;
 
@@ -18,7 +16,7 @@ public abstract class ViewHolder extends RecyclerView.ViewHolder{
         super(itemView);
     }
 
-    abstract void setKeys(List<BibEntry> bibEntries, int position);
+    abstract void setKeys(BibEntry entry);
 
     public static class ViewHolderArt extends ViewHolder {
 
@@ -31,15 +29,15 @@ public abstract class ViewHolder extends RecyclerView.ViewHolder{
         TextView year;
 
         @Override
-        void setKeys(List<BibEntry> entries, int position) {
+        void setKeys(BibEntry entry) {
             author = itemView.findViewById(R.id.art_author);
-            author.setText(entries.get(position).getField(Keys.AUTHOR));
+            author.setText(entry.getField(Keys.AUTHOR));
             title = itemView.findViewById(R.id.art_title);
-            title.setText(entries.get(position).getField(Keys.TITLE));
+            title.setText(entry.getField(Keys.TITLE));
             journal = itemView.findViewById(R.id.art_journal);
-            journal.setText(entries.get(position).getField(Keys.JOURNAL));
+            journal.setText(entry.getField(Keys.JOURNAL));
             year = itemView.findViewById(R.id.art_year);
-            year.setText(entries.get(position).getField(Keys.YEAR));
+            year.setText(entry.getField(Keys.YEAR));
         }
 
     }
@@ -55,15 +53,15 @@ public abstract class ViewHolder extends RecyclerView.ViewHolder{
         TextView year;
 
         @Override
-        void setKeys(List<BibEntry> entries, int position) {
+        void setKeys(BibEntry entry) {
             author = itemView.findViewById(R.id.book_author);
-            author.setText(entries.get(position).getField(Keys.AUTHOR));
+            author.setText(entry.getField(Keys.AUTHOR));
             title = itemView.findViewById(R.id.book_title);
-            title.setText(entries.get(position).getField(Keys.TITLE));
+            title.setText(entry.getField(Keys.TITLE));
             publisher = itemView.findViewById(R.id.book_publisher);
-            publisher.setText(entries.get(position).getField(Keys.PUBLISHER));
+            publisher.setText(entry.getField(Keys.PUBLISHER));
             year = itemView.findViewById(R.id.book_year);
-            year.setText(entries.get(position).getField(Keys.YEAR));
+            year.setText(entry.getField(Keys.YEAR));
         }
 
     }
@@ -79,15 +77,15 @@ public abstract class ViewHolder extends RecyclerView.ViewHolder{
         TextView year;
 
         @Override
-        void setKeys(List<BibEntry> entries, int position) {
+        void setKeys(BibEntry entry) {
             author = itemView.findViewById(R.id.inc_author);
-            author.setText(entries.get(position).getField(Keys.AUTHOR));
+            author.setText(entry.getField(Keys.AUTHOR));
             title = itemView.findViewById(R.id.inc_title);
-            title.setText(entries.get(position).getField(Keys.TITLE));
+            title.setText(entry.getField(Keys.TITLE));
             booktitle = itemView.findViewById(R.id.inc_booktitle);
-            booktitle.setText(entries.get(position).getField(Keys.BOOKTITLE));
+            booktitle.setText(entry.getField(Keys.BOOKTITLE));
             year = itemView.findViewById(R.id.inc_year);
-            year.setText(entries.get(position).getField(Keys.YEAR));
+            year.setText(entry.getField(Keys.YEAR));
         }
 
     }
@@ -103,15 +101,15 @@ public abstract class ViewHolder extends RecyclerView.ViewHolder{
         TextView year;
 
         @Override
-        void setKeys(List<BibEntry> entries, int position){
+        void setKeys(BibEntry entry){
             author = itemView.findViewById(R.id.inp_author);
-            author.setText(entries.get(position).getField(Keys.AUTHOR));
+            author.setText(entry.getField(Keys.AUTHOR));
             title = itemView.findViewById(R.id.inp_title);
-            title.setText(entries.get(position).getField(Keys.TITLE));
+            title.setText(entry.getField(Keys.TITLE));
             booktitle = itemView.findViewById(R.id.inp_booktitle);
-            booktitle.setText(entries.get(position).getField(Keys.BOOKTITLE));
+            booktitle.setText(entry.getField(Keys.BOOKTITLE));
             year = itemView.findViewById(R.id.inp_year);
-            year.setText(entries.get(position).getField(Keys.YEAR));
+            year.setText(entry.getField(Keys.YEAR));
 
         }
     }
@@ -127,15 +125,15 @@ public static class ViewHolderMisc extends ViewHolder{
     TextView year;
 
     @Override
-    void setKeys(List<BibEntry> entries, int position){
+    void setKeys(BibEntry entry){
         author = itemView.findViewById(R.id.misc_author);
-        author.setText(entries.get(position).getField(Keys.AUTHOR));
+        author.setText(entry.getField(Keys.AUTHOR));
         title = itemView.findViewById(R.id.misc_title);
-        title.setText(entries.get(position).getField(Keys.TITLE));
+        title.setText(entry.getField(Keys.TITLE));
         howpublished = itemView.findViewById(R.id.misc_howpublished);
-        howpublished.setText(entries.get(position).getField(Keys.HOWPUBLISHED));
+        howpublished.setText(entry.getField(Keys.HOWPUBLISHED));
         year = itemView.findViewById(R.id.misc_year);
-        year.setText(entries.get(position).getField(Keys.YEAR));
+        year.setText(entry.getField(Keys.YEAR));
     }
 }
 
@@ -150,15 +148,15 @@ public static class ViewHolderMisc extends ViewHolder{
         TextView year;
 
         @Override
-        void setKeys(List<BibEntry> entries, int position) {
+        void setKeys(BibEntry entry) {
             author = itemView.findViewById(R.id.tech_author);
-            author.setText(entries.get(position).getField(Keys.AUTHOR));
+            author.setText(entry.getField(Keys.AUTHOR));
             title = itemView.findViewById(R.id.tech_title);
-            title.setText(entries.get(position).getField(Keys.TITLE));
+            title.setText(entry.getField(Keys.TITLE));
             booktitle = itemView.findViewById(R.id.tech_booktitle);
-            booktitle.setText(entries.get(position).getField(Keys.BOOKTITLE));
+            booktitle.setText(entry.getField(Keys.BOOKTITLE));
             year = itemView.findViewById(R.id.tech_year);
-            year.setText(entries.get(position).getField(Keys.YEAR));
+            year.setText(entry.getField(Keys.YEAR));
         }
 
     }
@@ -174,15 +172,15 @@ public static class ViewHolderMisc extends ViewHolder{
         TextView type;
 
         @Override
-        void setKeys(List<BibEntry> entries, int position) {
+        void setKeys(BibEntry entry) {
             author = itemView.findViewById(R.id.unp_author);
-            author.setText(entries.get(position).getField(Keys.AUTHOR));
+            author.setText(entry.getField(Keys.AUTHOR));
             title = itemView.findViewById(R.id.unp_title);
-            title.setText(entries.get(position).getField(Keys.TITLE));
+            title.setText(entry.getField(Keys.TITLE));
             year = itemView.findViewById(R.id.unp_year);
-            year.setText(entries.get(position).getField(Keys.YEAR));
+            year.setText(entry.getField(Keys.YEAR));
             type = itemView.findViewById(R.id.unp_type1);
-            type.setText(entries.get(position).getField(Keys.TYPE));
+            type.setText(entry.getField(Keys.TYPE));
         }
     }
 }
